@@ -1,13 +1,15 @@
 #include <stdio.h>
 /**
- * main- programming alphaBETS
- * 
- * return : Always 0 (Success)
+ * main - a fuction of  programming alphaBETS
+ * DESCRIPTION: Using putchar to run alphabets
+ *
+ * Return:  Always 0 (Success)
  */
 int main(void)
 {
 	int n = 97;
 	int m = 65;
+
 	while (n <= 122)
 	{
 		putchar(n);
@@ -18,7 +20,6 @@ int main(void)
 		putchar(m);
 		m++;
 	}
-	{
-		putchar('n\');
+		putchar('\n');
 		return (0);
 }
