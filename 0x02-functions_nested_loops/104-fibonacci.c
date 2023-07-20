@@ -16,7 +16,7 @@ int main(void)
 
 	printf("%lu", bef);
 
-	for (i = 1; i < 91; ++i)
+	for (i = 1; i < 91; i++)
 	{
 		printf(",%lu", aft);
 		aft += bef;
@@ -30,7 +30,7 @@ int main(void)
 
 	for (i = 92; i < 99; ++i)
 	{
-		printf(",%lu", aft1 + (aft2 / l));
+		printf(", %lu", aft1 + (aft2 / l));
 		printf("%lu", aft2 % l);
 		aft1 = aft1 + bef1;
 		bef1 = aft1 - bef1;
