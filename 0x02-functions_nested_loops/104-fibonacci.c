@@ -19,7 +19,8 @@ int main(void)
 	for (i = 1; i < 91; i++)
 	{
 		printf(", %lu", aft);
-		aft += aft - bef;
+		aft += aft;
+		bef = aft - bef;
 	}
 
 	bef1 = (bef / l);
