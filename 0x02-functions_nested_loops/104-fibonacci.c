@@ -18,8 +18,8 @@ int main(void)
 
 	for (i = 1; i < 91; i++)
 	{
-		printf(", %lu", aft);
-		aft += aft;
+		printf(",%lu", aft);
+		aft += bef;
 		bef = aft - bef;
 	}
 
