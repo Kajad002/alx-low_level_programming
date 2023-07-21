@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * main - check the code
  *
@@ -18,4 +19,3 @@ print_number(-98);
 _putchar('\n');
 return (0);
 }
-
