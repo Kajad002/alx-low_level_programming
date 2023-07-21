@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - fibonacci < 3
- * Return: 0
+ * Return:(Success)
  */
 int main(void)
 {
@@ -18,7 +18,7 @@ int main(void)
 
 	for (i = 1; i < 91; i++)
 	{
-		printf(",%lu", aft);
+		printf(", %lu", aft);
 		aft += bef;
 		bef = aft - bef;
 	}
