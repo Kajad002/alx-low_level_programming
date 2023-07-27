@@ -3,9 +3,10 @@
 
 /**
  * print_buffer - prints buffer
- * @b: buffer
- * @size:size
+ * @b: paramer
+ * @size:size parameter
  * Return: void
+ * @\n: new line
  */
 void print_buffer(char *b, int size)
 {
