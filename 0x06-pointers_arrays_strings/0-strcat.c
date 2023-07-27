@@ -6,7 +6,7 @@
  * @dest: destination
  * @\0: null
  * @strcat: catenation command
- * Return: dest
+ * Return: void
  *
  */
 char *_strcat(char *dest, char *src)
