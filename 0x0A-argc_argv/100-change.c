@@ -3,10 +3,9 @@
 #include "main.h"
 
 /**
- * main - prints the minimum number of coins 
- * @argc: counts number of inputs
+ * main - prints the minimum number of coins
  * @argv: the string array that points the input
- *
+ *@argc: counts the inputs
  * Return: 0 (Success), 1 (Error)
  */
 int main(int argc, char *argv[])
@@ -16,12 +15,11 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("Error\n");
-		return (1);
+	printf("Error\n");
+	return (1);
 	}
 	num = atoi(argv[1]);
 	result = 0;
-
 	if (num < 0)
 	{
 		printf("0\n");
