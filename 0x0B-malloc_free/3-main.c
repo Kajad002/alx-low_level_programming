@@ -25,7 +25,7 @@ printf("%d ", grid[h][w]);
 w++;
 }
 printf("\n");
-h++
+h++;
 }
 }
 
