@@ -6,7 +6,7 @@
  * argstostr - concatenates all the arguments
  * @ac: function arguement
  * @av: function arguement
- * Return: NULL if it fails
+ * Return: 0
  */
 char *argstostr(int ac, char **av)
 {
@@ -15,9 +15,10 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
+
 	for (i = 0; i < ac; i++)
 	{
-		for (n = 0; av[i]; n++)
+		for (n = 0; av[i][n]; n++)
 			l++;
 	}
 	l += ac;
@@ -28,7 +29,7 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		for (n = 0; i < ac; i++)
+		for (n = 0; av[i][n]; n++)
 		{
 			str[r] = av[i][n];
 			r++;
