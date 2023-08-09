@@ -41,7 +41,7 @@ char **strtow(char *str)
 	words = count_word(str);
 	if (words == 0)
 		return (NULL);
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+	matrix = (char **)malloc(sizeof(char *) * (words + 1));
 	if (matrix == NULL)
 		return (NULL);
 	for (i = 0; i <= len; i++)
@@ -51,11 +51,12 @@ char **strtow(char *str)
 			if (c)
 			{
 				end = i;
-				tmp = malloc(sizeof(char) * (c + 1));
+				tmp = (char *)malloc(sizeof(char *) * (c + 1));
 				if (tmp == NULL)
 					return (NULL);
 				while (start < end)
-					*tmp = '\0';
+					*tmp++ = str[start++];
+				*tmp = '\0';
 				matrix[k] = tmp - c;
 				k++;
 				c = 0;
