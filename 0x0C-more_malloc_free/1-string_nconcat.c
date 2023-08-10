@@ -23,7 +23,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 	strncpy(result, s1, concat_len);
-	strncat(result, s2, len2);
+	result[concat_len] = '\0';
+
+	strcat(result, s2);
 
 	return (result);
 }
