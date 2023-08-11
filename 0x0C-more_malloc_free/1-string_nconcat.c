@@ -36,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		n = s2_len;
 	}
-	concatenated = (char *)calloc(s1_len + n, sizeof(char));
+	concatenated = (char *)calloc(s1_len + n + 1, sizeof(char *));
 
 	if (concatenated == NULL)
 	{
