@@ -11,22 +11,46 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	size_t len1 = strlen(s1);
-	size_t len2 = strlen(s2);
-	size_t concat_len = (len1 < n) ? len1 : n;
-	size_t total_len = concat_len + len2 + 1;
+	unsigned int s1_len;
+	unsigned int s2_len;
+	unsigned int i, j;
+	char *concatenated;
 
-	char *result = (char *)calloc(total_len, sizeof(char));
-
-	if (result == NULL)
+	if (s1 == NULL)
 	{
-		perror("MEmory Allocation Failed");
-		exit(EXIT_FAILURE);
+		s1 = "";
 	}
-	strncpy(result, s1, concat_len);
-	result[concat_len] = '\0';
+	else
+	{
+		s1_len = strlen(s1);
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+	else
+	{
+		s2_len = strlen(s2);
+	}
+	if (n >= s2_len)
+	{
+		n = s2_len;
+	}
+	concatenated = (char *)calloc(s1_len + n + 1, sizeof(char));
 
-	strcat(result, s2);
+	if (concatenated == NULL)
+	{
+		return (NULL);
+	}
 
-	return (result);
+	for (i = 0; i < s1_len; i++)
+	{
+		concatenated[i] = s1[i];
+	}
+	for (j = 0; j < n; j++)
+	{
+		concatenated[i + j] = s2[j];
+	}
+	concatenated[i + j] = '\0';
+	return (concatenated);
 }
