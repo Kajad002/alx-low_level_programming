@@ -12,6 +12,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	size_t len1 = strlen(s1);
+	size_t len2 = strlen(s2);
 	size_t concat_len = (len1 < n) ? len1 : n;
 	size_t total_len = concat_len + len2 + 1;
 
