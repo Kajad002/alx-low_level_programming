@@ -1,21 +1,6 @@
 #include "function_pointers.h"
 #include <stdio.h>
-#include <stddef.h>
-
-/**
- * print_to_console - function that prints to console
- * @name: the name to be printed
- *
- */
-void print_to_console(char *name)
-{
-	while (*name != '\0')
-	{
-		putchar(*name);
-		name++;
-	}
-	putchar('\n');
-}
+#include <unistd.h>
 /**
  * print_name - function that prints a name
  * @name: function arguement
