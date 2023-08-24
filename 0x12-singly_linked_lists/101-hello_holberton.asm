@@ -1,15 +1,19 @@
 section .data
     hello db "Hello, Holberton", 0
+    newline db 10, 0    ; Newline character (ASCII 10)
 
 section .text
     global main
     extern printf
 
 main:
-    sub rsp, 8            ; Align the stack
+    push rbp              ; Preserve base pointer
 
-    lea rdi, [hello]      ; Load the address of the string into rdi
+    mov rdi, hello        ; Load the address of the string into rdi
     call printf          ; Call the printf function
 
-    add rsp, 8            ; Restore the stack
+    mov rdi, newline      ; Load the address of the newline character into rdi
+    call printf          ; Call the printf function for newline
+
+    pop rbp               ; Restore base pointer
     ret
