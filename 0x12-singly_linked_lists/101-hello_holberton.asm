@@ -1,19 +1,11 @@
-section .data
-    hello db "Hello, Holberton", 0
-    newline db 10, 0    ; Newline character (ASCII 10)
-
-section .text
-    global main
-    extern printf
+global   main       ; Declare 'main' as a globally accessible entry point
+extern    printf     ; Declare 'printf' as an external function
 
 main:
-    push rbp              ; Preserve base pointer
+    mov   edi, format  ; Move the address of the 'format' string to the 'edi' register
+    xor   eax, eax     ; Clear the 'eax' register (return value of the function)
+    call  printf       ; Call the 'printf' function to print the formatted string
+    mov   eax, 0       ; Set the return value of the function to 0 (success)
+    ret                ; Return from the function
 
-    mov rdi, hello        ; Load the address of the string into rdi
-    call printf          ; Call the printf function
-
-    mov rdi, newline      ; Load the address of the newline character into rdi
-    call printf          ; Call the printf function for newline
-
-    pop rbp               ; Restore base pointer
-    ret
+format: db `Hello, Holberton\n`,0  ; Define the null-terminated string 'format'
