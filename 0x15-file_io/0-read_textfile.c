@@ -4,6 +4,7 @@
  * standard output.
  * @filename: params
  * @letters: params
+ * Return: 0, on success. -1 on error
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
