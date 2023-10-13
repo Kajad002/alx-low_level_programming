@@ -1,15 +1,26 @@
-def square_matrix_simple(matrix=[]):
-  # create a new matrix to store the squared values
-  new_matrix = []
-  # loop through each row of the matrix
-  for row in matrix:
-    # create a new list to store the squared values of the row
-    new_row = []
-    # loop through each element of the row
-    for element in row:
-      # square the element and append it to the new row
-      new_row.append(element ** 2)
-    # append the new row to the new matrix
-    new_matrix.append(new_row)
-  # return the new matrix
-  return new_matrix
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
+class dlistint_t:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        if not self.head:
+            self.head = Node(data)
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = Node(data)
+
+    def print_dlistint(self):
+        current = self.head
+        count = 0
+        while current:
+            print(current.data)
+            current = current.next
+            count += 1
+        return count
