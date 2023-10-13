@@ -1,26 +1,29 @@
-class Node:
-    def __init__(self, data=None):
-        self.data = data
-        self.next = None
+#include "lists.h"
 
-class dlistint_t:
-    def __init__(self):
-        self.head = None
+/**
+ * dlistint_len - returns the number of elements in
+ * a double linked list
+ *
+ * @h: head of the list
+ * Return: the number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	int count;
 
-    def append(self, data):
-        if not self.head:
-            self.head = Node(data)
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = Node(data)
+	count = 0;
 
-    def print_dlistint(self):
-        current = self.head
-        count = 0
-        while current:
-            print(current.data)
-            current = current.next
-            count += 1
-        return count
+	if (h == NULL)
+		return (count);
+
+	while (h->prev != NULL)
+		h = h->prev;
+
+	while (h != NULL)
+	{
+		count++;
+		h = h->next;
+	}
+
+	return (count);
+}
